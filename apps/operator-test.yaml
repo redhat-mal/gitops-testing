@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: operator-install
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: ml-test
+  source:
+    path: sample-operators
+    repoURL: https://github.com/redhat-mal/gitops-testing.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+
