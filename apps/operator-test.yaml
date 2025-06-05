@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: ml-test
   source:
-    path: sample-operators
+    path: apps/sample-operators
     repoURL: https://github.com/redhat-mal/gitops-testing.git
     targetRevision: main
   syncPolicy:
